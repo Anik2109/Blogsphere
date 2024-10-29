@@ -15,11 +15,7 @@ function Signup() {
   const [loading, setLoading] = useState(false);
   const currentTheme = localStorage.getItem("theme") ?? "light";
   const toastTheme =
-    currentTheme == "light" ||
-    currentTheme == "cupcake" ||
-    currentTheme == "aqua" ||
-    currentTheme == "cyberpunk" ||
-    currentTheme == "wireframe"
+    currentTheme == "light"
       ? "light"
       : "dark";
   const notifyOnSuccess = (user) =>

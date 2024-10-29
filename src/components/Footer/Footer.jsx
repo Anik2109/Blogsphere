@@ -4,7 +4,7 @@ function Footer() {
         <aside className="grid-flow-col items-center">
           <p className="italic">Explore. Express. Evolve.</p>
         </aside>
-        <ul className="menu menu-vertical lg:menu-horizontal hidden bg-base-200 rounded-box">
+        <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
           <li>
             <a data-set-theme="light" data-act-class="ACTIVECLASS">
               <svg

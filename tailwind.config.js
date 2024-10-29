@@ -10,6 +10,6 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["light", "dark", "cupcake", "wireframe", "luxury", "cyberpunk", "aqua"],
+    themes: ["light", "dark"],
   },
 }

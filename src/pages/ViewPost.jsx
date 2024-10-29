@@ -18,11 +18,7 @@ const ViewPost = () => {
   const isAuthor = post && userData ? post.userId === userData.$id : false;
   const currentTheme = localStorage.getItem("theme") ?? "light";
   const toastTheme =
-    currentTheme == "light" ||
-    currentTheme == "cupcake" ||
-    currentTheme == "aqua" ||
-    currentTheme == "cyberpunk" ||
-    currentTheme == "wireframe"
+    currentTheme == "light" 
       ? "light"
       : "dark";
   const notify = () =>

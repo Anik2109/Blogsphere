@@ -22,11 +22,18 @@ class AuthService {
     }
     async login({ email, password }) {
         try {
+            await this.account.deleteSession('current');
+        } catch (error) {
+            console.warn("No active session found to delete. Proceeding with login.");
+        }
+        try {
             return await this.account.createEmailPasswordSession(email, password);
         } catch (error) {
             console.error("Appwrite service :: login", error);
+            throw error;
         }
     }
+    
     async getCurrentUser() {
         try {
             return await this.account.get();
