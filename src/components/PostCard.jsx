@@ -60,7 +60,7 @@ const PostCard = ({ $id, title, featuredImage, $createdAt, author }) => {
           <div className="avatar space-x-2">
             <div className="w-6 rounded">
               <img
-                src="/src/assets/pfp.jpg"
+                src="/assets/pfp.jpg"
                 width="20px"
                 height="20px"
               />

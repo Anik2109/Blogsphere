@@ -7,37 +7,34 @@ import { setPosts as setPostsInStore } from "../app/postSlice";
 const Home = () => {
   const { status: authStatus, userData } = useSelector((state) => state.auth);
 
-  const { posts, searchTerm } = useSelector((state) => state.post);
+  const { searchTerm } = useSelector((state) => state.post);
+  const posts = useSelector((state) => state.post.posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let isMounted = true;
     if (authStatus) {
       if (!posts.length) {
         dbService
           .getPosts()
           .then((postsFromDB) => {
-            if (isMounted && postsFromDB) {
+            if (postsFromDB) {
               dispatch(setPostsInStore(postsFromDB.documents));
             }
           })
           .catch((error) => {
-            if (isMounted) {
-              console.error("Error fetching posts: ", error);
-            }
+            console.error("Error fetching posts:", error);
           });
       }
     }
-    return () => {
-      isMounted = false;
-    };
-  }, [authStatus, dispatch, posts]);
+  }, [authStatus, dispatch]);
 
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+
   if (!filteredPosts.length && authStatus) {
+    
     return (
       <div className="h-screen w-full flex justify-center items-center">
         <h1 className="text-2xl">Not found!</h1>
@@ -87,17 +84,17 @@ const Home = () => {
     <div className="w-full">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 lg:grid-cols-5">
         {filteredPosts.map((post) => {
-          if (post.status === "active") {
             return (
-              <div key={post.$id}>
+              <div key={post.$id}>                
                 <PostCard {...post} author={userData.name} />
               </div>
             );
-          }
         })}
       </div>
     </div>
   );
+  
+  
 };
 
 export default Home;

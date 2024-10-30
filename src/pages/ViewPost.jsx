@@ -100,7 +100,7 @@ const ViewPost = () => {
         <div className="flex-shrink-0">
           <div className="w-12 h-12 rounded overflow-hidden">
             <img
-              src="/src/assets/pfp.jpg"
+              src="/assets/pfp.jpg"
               alt="User avatar"
               className="w-full h-full object-cover"
             />

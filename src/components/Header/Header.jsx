@@ -79,7 +79,7 @@ const Header = () => {
             >
               <div className="w-10 rounded">
                 <img
-                  src="/src/assets/pfp.jpg"
+                  src="/assets/pfp.jpg"
                   alt="pfp"
                   width="20px"
                   height="20px"
