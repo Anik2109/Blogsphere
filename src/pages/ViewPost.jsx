@@ -87,10 +87,10 @@ const ViewPost = () => {
       <div className="relative overflow-hidden rounded shadow">
         <img
           src={dbService.getFilePreview(post.featuredImage)}
-          alt={post.title}
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="post nhi aa rhi......"
+          className="absolute inset-0 h-full w-full object-cover z-0"
         />
-        <div className="relative bg-gradient-to-t from-gray-900/60 to-gray-900/10 dark:bg-gradient-to-t dark:from-gray-900 dark:to-gray-600 pt-32 sm:pt-48 lg:pt-64">
+        <div className="relative pt-32 sm:pt-48 lg:pt-64 z-10">
           <div className="p-4 sm:p-6">
             <h1 className="text-white text-3xl font-bold">{post.title}</h1>
           </div>

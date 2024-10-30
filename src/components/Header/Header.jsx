@@ -92,7 +92,7 @@ const Header = () => {
             >
               <li>
                 <Link to="/drafts" className="justify-between">
-                  My Drafts
+                  Posts
                   <span className="badge">
                     {posts.filter((post) => post.status === "inactive").length}
                   </span>

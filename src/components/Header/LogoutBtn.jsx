@@ -4,6 +4,7 @@ import { flushPosts } from "../../app/postSlice";
 import authService from "../../appwrite/auth";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const currentTheme = localStorage.getItem("theme") ?? "light";
 const toastTheme =
@@ -26,6 +27,7 @@ const notify = () =>
 function LogoutBtn() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleLogout = () => {
     setLoading(true);
     authService
@@ -34,6 +36,7 @@ function LogoutBtn() {
         notify();
         dispatch(logout());
         dispatch(flushPosts());
+        navigate("/");
       })
       .finally(() => setLoading(false));
   };
