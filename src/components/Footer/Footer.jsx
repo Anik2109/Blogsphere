@@ -33,7 +33,7 @@ function Footer() {
         <a
           className="md:place-self-center md:justify-self-end hover:opacity-60"
           target="_blank"
-          href="https://github.com/harshitaloomba/"
+          href="https://github.com/Anik2109/"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
